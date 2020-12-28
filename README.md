@@ -41,7 +41,7 @@ conda update python
 conda update --all
 ```
 
-Then, create the new conda environment called *digit_recognition* to store all the dependencies related with this repo:
+Then, create the new conda environment called *digit_recognition* to store all the dependencies related to this repo:
 
 ```
 conda create --name digit_recognition
