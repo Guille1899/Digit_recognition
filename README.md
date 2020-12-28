@@ -28,13 +28,13 @@ The digits have been pre-processed to be size-normalized and centered in a fixed
 
 ## How to run this app
 
-Clone this repository and navigate to the main folder. Open your Terminal (for MacOS/Linux) or your Command Prompt (for Windows) and run the following commands:
+Clone this repository and navigate to the main folder. To do so, open your Terminal (for MacOS/Linux) or your Command Prompt (for Windows) and run the following commands:
 ```
 git clone https://github.com/Guille1899/Digit_recognition.git
 cd ./Digit_recognition/
 ```
 
-I strongly suggest to create a virtual environment with Conda to help manage dependencies and isolate projects. After installing [Miniconda](https://docs.conda.io/en/latest/miniconda.html), run the following commands to update the base conda packages:
+I strongly suggest to create a virtual environment with Conda to manage dependencies and isolate projects. After installing [Miniconda](https://docs.conda.io/en/latest/miniconda.html), run the following commands to update the base conda packages:
 ```
 conda update conda
 conda update python
@@ -48,12 +48,14 @@ conda create --name digit_recognition
 conda activate digit_recognition
 ```
 
-Install all required packages:
+Now, install all required packages:
 ```
-conda install --file requirements.txt
+pip install -r requirements.txt
 ```
 
-Time to install tensorflow. Note that if you have a NVIDIA graphics card on your machine, you should consider installing *tensorflow-gpu* to speed up your deep learning models. In any case, rather than using *pip* or *conda* to try to figure out which version of TensorFlow you need, I recommend finding the exact *.whl* file from [TensorFlow](https://www.tensorflow.org/install/pip#package-location)’s site.
+Time to install *tensorflow*. Note that if you have a NVIDIA graphics card on your machine, you should consider installing *tensorflow-gpu* (instead of the regular *tensorflow-cpu*) to speed up your deep learning models. 
+
+In both cases, rather than using *pip* or *conda* to try to figure out which version of TensorFlow you need, I recommend finding the exact "*.whl*" file from [TensorFlow](https://www.tensorflow.org/install/pip#package-location)’s site.
 Once you have the *url* of the corresponding TensorFlow version that you need, run the following command (substite *<whl_url>* by the exact url):
 ```
 python -m pip install <whl_url>
@@ -66,13 +68,13 @@ conda install -c conda-forge jupyter_nbextensions_configurator
 python -m ipykernel install --user --name digit_recognition --display-name "digit_recognition-TF-GPU-2.4.0"
 ```
 
-Open the jupyter notebook locally:
+Now, you can open the jupyter notebook locally:
 ```
 conda activate digit_recognition
 jupyter notebook
 ```
 
-Run the app locally:
+Finally, to run the app locally, use these commands:
 ```
 conda activate digit_recognition
 python app.py
