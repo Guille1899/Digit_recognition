@@ -6,9 +6,9 @@ This app allows you to recognize digits (i.e., numbers from 0 to 9) manually dra
 
 ## LeNet-5
 
-Convolutional Neural Networks is the standard architecture of a neural network designed for solving tasks associated with images (e.g., image classification). Some of the well-known deep learning architectures for CNN are LeNet-5 (7 layers), GoogLeNet (22 layers), AlexNet (8 layers), VGG (16–19 layers), and ResNet (152 layers). 
+Convolutional Neural Networks is the standard architecture for solving tasks associated with images (e.g., image classification). Some of the well-known deep learning architectures for CNN are LeNet-5 (7 layers), GoogLeNet (22 layers), AlexNet (8 layers), VGG (16–19 layers), and ResNet (152 layers). 
 
-For this project, we use LeNet-5, which has been successfully used on the MNIST dataset to identify handwritten-digit patterns. The LeNet-5 architecture is represented in the following image.
+For this project, we use LeNet-5, which has been successfully used on the MNIST dataset to identify handwritten-digit patterns. The LeNet-5 architecture is presented in the following schema.
 
 ![screenshot](img/lenet.png)
 
@@ -28,13 +28,13 @@ The digits have been pre-processed to be size-normalized and centered in a fixed
 
 ## How to run this app
 
-Clone this repository and navigate to the main folder:
+Clone this repository and navigate to the main folder. Open your Terminal (for MacOS/Linux) or your Command Prompt (for Windows) and run the following commands:
 ```
 git clone https://github.com/Guille1899/Digit_recognition.git
 cd ./Digit_recognition/
 ```
 
-I strongly suggest to create a virtual environment with conda to help manage dependencies and isolate projects. After installing [Anaconda](https://www.anaconda.com/products/individual), run the following commands to update the base Conda packages:
+I strongly suggest to create a virtual environment with Conda to help manage dependencies and isolate projects. After installing [Miniconda](https://docs.conda.io/en/latest/miniconda.html), run the following commands to update the base conda packages:
 ```
 conda update conda
 conda update python
