@@ -23,64 +23,59 @@ The digits have been pre-processed to be size-normalized and centered in a fixed
 ## Requirements
 
 * Python 3
+* Tensorflow
+* Dash
 
 ## How to run this app
 
-Clone this repository and open your terminal/command prompt in the root folder.
+Clone this repository and navigate to the main folder:
 ```
-git clone https://github.com/....
-cd /.../
-
+git clone https://github.com/Guille1899/Digit_recognition.git
+cd ./Digit_recognition/
 ```
 
-I suggest you to create a virtual environment with conda to help manage dependencies and isolate projects. After installing [Anaconda](https://www.anaconda.com/products/individual), run the following commands to update your base Conda packages:
+I strongly suggest to create a virtual environment with conda to help manage dependencies and isolate projects. After installing [Anaconda](https://www.anaconda.com/products/individual), run the following commands to update the base Conda packages:
 ```
 conda update conda
 conda update python
 conda update --all
-
 ```
 
-Then, create the new conda environment called *digit_recognition*:
+Then, create the new conda environment called *digit_recognition* to store all the dependencies related with this repo:
 
 ```
 conda create --name digit_recognition
 conda activate digit_recognition
-
 ```
 
 Install all required packages:
 ```
 conda install --file requirements.txt
-
 ```
 
-Time to install tensorflow. Note that if you have a NVIDIA graphics card on your machine, you should consider installing Tensorflow-gpu. 
-Rather than let pip try to figure out which version of TensorFlow you need, I recommend finding the exact *.whl* file from [TensorFlow](https://www.tensorflow.org/install/pip#package-location)’s site.
+Time to install tensorflow. Note that if you have a NVIDIA graphics card on your machine, you should consider installing *tensorflow-gpu* to speed up your deep learning models. In any case, rather than using *pip* or *conda* to try to figure out which version of TensorFlow you need, I recommend finding the exact *.whl* file from [TensorFlow](https://www.tensorflow.org/install/pip#package-location)’s site.
+Once you have the *url* of the corresponding TensorFlow version that you need, run the following command (substite *<whl_url>* by the exact url):
 ```
 python -m pip install <whl_url>
-
 ```
 
 Now, create a Jupyter Notebook kernel for the new environment:
 ```
 conda install ipykernel jupyter
 conda install -c conda-forge jupyter_nbextensions_configurator
-python -m ipykernel install --user --name digit_recognition --display-name "digit_recognition-TF-GPU-2.3.0"
-
+python -m ipykernel install --user --name digit_recognition --display-name "digit_recognition-TF-GPU-2.4.0"
 ```
 
-Open the notebook locally:
+Open the jupyter notebook locally:
 ```
 conda activate digit_recognition
 jupyter notebook
-
 ```
 
 Run the app locally:
 ```
+conda activate digit_recognition
 python app.py
-
 ```
 
 ## Screenshot
@@ -90,4 +85,3 @@ python app.py
 ## Resources
 
 * [Dash](https://dash.plot.ly/)
-* Inspired by [Tableau template](https://www.tableau.com/solutions/workbook/improve-patient-satisfaction-improving-cycle-time).
