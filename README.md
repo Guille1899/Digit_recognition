@@ -65,7 +65,7 @@ python app.py
 
 ## Notes on TensorFlow
 
-When installing *tensorflow*, note that if you have a NVIDIA graphics card on your machine, you should consider installing *tensorflow-gpu* (instead of the regular *tensorflow-cpu*) to speed up your deep learning models.
+When installing *tensorflow*, note that if you have a NVIDIA graphics card on your machine, you should consider installing *tensorflow-gpu* (instead of the regular *tensorflow-cpu*), to speed up your deep learning models.
 
 In both cases, rather than using *pip* or *conda* to try to figure out which version of TensorFlow you need, I recommend finding the exact "*.whl*" file from [TensorFlow](https://www.tensorflow.org/install/pip#package-location)’s site.
 Once you have the *url* of the corresponding TensorFlow version that you need, run the following command (substite *<whl_url>* by the exact url):
@@ -76,3 +76,4 @@ python -m pip install <whl_url>
 ## Resources
 
 * [Dash](https://dash.plot.ly/)
+* [TensorFlow](https://www.tensorflow.org/)
