@@ -59,9 +59,9 @@ conda activate digit_recognition
 python app.py
 ```
 
-## Screenshot
+## Video
 
-![screenshot](img/screencapture.png)
+!(img/video.mp4)
 
 ## Notes on TensorFlow
 
