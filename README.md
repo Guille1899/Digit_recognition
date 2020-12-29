@@ -41,31 +41,10 @@ conda update python
 conda update --all
 ```
 
-Then, create the new conda environment called "*digit_recognition*" to store all the dependencies related to this repo:
+Now, we can create a new conda environment, called "*dash*", that will store all the dependencies related to this repo. This can be easily achieved by loading the "*environment.yaml*" file, which contains an environment already created with all the packages needed to run the code in this repo.
 
 ```
-conda create --name digit_recognition
-conda activate digit_recognition
-```
-
-Now, install all required packages:
-```
-pip install -r requirements.txt
-```
-
-Time to install *tensorflow*. Note that if you have a NVIDIA graphics card on your machine, you should consider installing *tensorflow-gpu* (instead of the regular *tensorflow-cpu*) to speed up your deep learning models.
-
-In both cases, rather than using *pip* or *conda* to try to figure out which version of TensorFlow you need, I recommend finding the exact "*.whl*" file from [TensorFlow](https://www.tensorflow.org/install/pip#package-location)’s site.
-Once you have the *url* of the corresponding TensorFlow version that you need, run the following command (substite *<whl_url>* by the exact url):
-```
-python -m pip install <whl_url>
-```
-
-Now, create a Jupyter Notebook kernel for the new environment:
-```
-conda install ipykernel jupyter
-conda install -c conda-forge jupyter_nbextensions_configurator
-python -m ipykernel install --user --name digit_recognition --display-name "digit_recognition-TF-GPU-2.4.0"
+conda env create --file environment.yaml
 ```
 
 Now, you can open the jupyter notebook locally:
@@ -83,6 +62,16 @@ python app.py
 ## Screenshot
 
 ![screenshot](img/screencapture.png)
+
+## Notes on TensorFlow
+
+When installing *tensorflow*, note that if you have a NVIDIA graphics card on your machine, you should consider installing *tensorflow-gpu* (instead of the regular *tensorflow-cpu*) to speed up your deep learning models.
+
+In both cases, rather than using *pip* or *conda* to try to figure out which version of TensorFlow you need, I recommend finding the exact "*.whl*" file from [TensorFlow](https://www.tensorflow.org/install/pip#package-location)’s site.
+Once you have the *url* of the corresponding TensorFlow version that you need, run the following command (substite *<whl_url>* by the exact url):
+```
+python -m pip install <whl_url>
+```
 
 ## Resources
 
