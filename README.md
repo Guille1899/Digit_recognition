@@ -41,7 +41,7 @@ conda update python
 conda update --all
 ```
 
-Now, we can create a new conda environment, called "*dash*", that will store all the dependencies related to this repo. This can be easily achieved by loading the "*environment.yaml*" file, which contains an environment already created with all the packages needed to run the code in this repo.
+Now, we can create a new conda environment, called "*digit_recognition*", that will store all the dependencies related to this repo. This can be easily achieved by loading the "*environment.yaml*" file, which contains an environment already created with all the packages needed to run the code in this repo.
 
 ```
 conda env create --file environment.yaml
