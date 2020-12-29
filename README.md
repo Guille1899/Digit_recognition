@@ -61,7 +61,7 @@ python app.py
 
 ## Video
 
-!(img/video.gif)
+![](img/video.gif)
 
 ## Notes on TensorFlow
 
