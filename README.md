@@ -61,7 +61,7 @@ python app.py
 
 ## Video
 
-!(img/video.mp4)
+!(img/video.gif)
 
 ## Notes on TensorFlow
 
