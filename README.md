@@ -69,7 +69,7 @@ pip install <whl_url>
 
 * If you don't have a NVIDIA graphics card, you should install the regular "*tensoflow*" with the following command:
 ```
-pip install tensorflow
+pip install tensorflow==2.4.0
 ```
 
 ### Run the notebook
