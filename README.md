@@ -23,7 +23,7 @@ The digits have been pre-processed to be size-normalized and centered in a fixed
 ## Requirements
 
 * Python 3
-* Tensorflow
+* Tensorflow 2
 * Dash
 
 ## How to run this app
