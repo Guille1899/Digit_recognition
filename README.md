@@ -51,12 +51,12 @@ Now, create a Jupyter Notebook kernel for the new environment:
 ```
 conda install ipykernel jupyter
 conda install -c conda-forge jupyter_nbextensions_configurator
-python3 -m ipykernel install --user --name digit_recognition --display-name "digit_recognition"
+python -m ipykernel install --user --name digit_recognition --display-name "digit_recognition"
 ```
 
 Now, install all required packages:
 ```
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Install TensorFlow
@@ -65,7 +65,7 @@ It's time to install *tensorflow*. Note that if you have a NVIDIA graphics card 
 In both cases, rather than using *pip* or *conda* to try to figure out which version of TensorFlow you need, I recommend finding the exact "*.whl*" file from [TensorFlow](https://www.tensorflow.org/install/pip#package-location)’s site.
 Once you have the *url* of the corresponding TensorFlow version that you need, run the following command (substitute *<whl_url>* with the exact url):
 ```
-pip3 install <whl_url>
+pip install <whl_url>
 ```
 
 ### Run the notebook
@@ -79,7 +79,7 @@ jupyter notebook
 Finally, to run the app locally, use these commands:
 ```
 conda activate digit_recognition
-python3 app.py
+python app.py
 ```
 
 ## Video
