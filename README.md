@@ -59,20 +59,23 @@ Now, install all required packages:
 pip install -r requirements.txt
 ```
 
+### Install TensorFlow
 It's time to install *tensorflow*. Note that if you have a NVIDIA graphics card on your machine, you should consider installing *tensorflow-gpu* (instead of the regular *tensorflow-cpu*), to speed up your deep learning models.
 
 In both cases, rather than using *pip* or *conda* to try to figure out which version of TensorFlow you need, I recommend finding the exact "*.whl*" file from [TensorFlow](https://www.tensorflow.org/install/pip#package-location)’s site.
-Once you have the *url* of the corresponding TensorFlow version that you need, run the following command (substite *<whl_url>* by the exact url):
+Once you have the *url* of the corresponding TensorFlow version that you need, run the following command (substitute *<whl_url>* with the exact url):
 ```
 python -m pip install <whl_url>
 ```
 
+### Run the notebook
 Now, you can open the jupyter notebook locally:
 ```
 conda activate digit_recognition
 jupyter notebook
 ```
 
+### Run the app
 Finally, to run the app locally, use these commands:
 ```
 conda activate digit_recognition
