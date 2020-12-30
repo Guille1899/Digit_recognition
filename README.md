@@ -22,7 +22,7 @@ The digits have been pre-processed to be size-normalized and centered in a fixed
 
 ## Requirements
 
-* Python 3
+* Python 3.8.5
 * Tensorflow 2
 * Dash
 
@@ -43,7 +43,7 @@ conda update --all
 
 Then, create the new conda environment called *digit_recognition* to store all the dependencies related to this repo:
 ```
-conda create --name digit_recognition
+conda create --name digit_recognition python=3.8.5
 conda activate digit_recognition
 ```
 
