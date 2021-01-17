@@ -72,23 +72,23 @@ pip install <whl_url>
 pip install tensorflow==2.4.0
 ```
 
+### Run the app
+To run the app locally, use these commands:
+```
+conda activate digit_recognition
+python ./app/app.py
+```
+
+![](img/video_app.gif)
+
 ### Run the notebook
-Now, you can open the jupyter notebook locally:
+Also, you can run the jupyter notebook locally:
 ```
 conda activate digit_recognition
 jupyter notebook
 ```
 
-### Run the app
-Finally, to run the app locally, use these commands:
-```
-conda activate digit_recognition
-python app.py
-```
-
-## Video
-
-![](img/video.gif)
+![](img/video_notebook.gif)
 
 ## Resources
 
