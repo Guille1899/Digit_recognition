@@ -26,7 +26,7 @@ The digits have been pre-processed to be size-normalized and centred in a fixed-
 
 ## Requirements
 
-* Python 3.8.5
+* Python 3
 * Tensorflow 2
 * Dash
 

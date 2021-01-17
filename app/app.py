@@ -6,14 +6,9 @@ import pandas as pd
 from skimage import io
 import json
 import os
-import zipfile
-import matplotlib.pyplot as plt
 import plotly.express as px
-import matplotlib.image as mpimg
 import random
 import shutil
-from datetime import datetime
-from sklearn.model_selection import train_test_split
 import pathlib
 import joblib
 pd.options.mode.chained_assignment = None
@@ -21,14 +16,8 @@ pd.options.mode.chained_assignment = None
 # TensorFlow
 import tensorflow as tf
 from tensorflow import keras
-from keras.utils import to_categorical
-from tensorflow.keras.optimizers import RMSprop, Adam
-from tensorflow.python.keras.models import Sequential
-from tensorflow.python.keras.layers import Dense, Conv2D, Flatten, MaxPooling2D
-# tf.config.allow_growth = True
 
-# Tkinter
-from tkinter import *
+# PIL
 import PIL
 from PIL import Image, ImageDraw, ImageFilter
 
@@ -41,8 +30,6 @@ import colorlover
 from dash_canvas import DashCanvas
 from dash_canvas.utils import array_to_data_url, parse_jsonstring
 from dash.exceptions import PreventUpdate
-import dash_table
-import dash_auth
 
 # Force to use CPU for this app
 tf.config.set_visible_devices([], 'GPU')
@@ -193,59 +180,6 @@ def description_card():
 
 
 
-################### Import data ######################
-
-# Import images and labels from the MNIST database
-(train_X, train_y), (test_X, test_y) = tf.keras.datasets.mnist.load_data()
-
-
-
-
-################### Preprocess data ######################
-
-# Shuffle train data
-permut = np.random.permutation(train_X.shape[0])
-train_X = train_X[permut]
-train_y = train_y[permut]
-
-# Shuffle test data
-permut = np.random.permutation(test_X.shape[0])
-test_X = test_X[permut]
-test_y = test_y[permut]
-
-# Reshape images to include the channels
-train_X = train_X.reshape(train_X.shape + (1,))
-test_X = test_X.reshape(test_X.shape + (1,))
-
-# Describe data dimensions
-print('Training images dimensions:', train_X.shape)
-print('Test images dimensions:', test_X.shape)
-
-# Normalize
-train_X = train_X / 255.
-test_X = test_X / 255.
-
-# Converte Labels to one hot encoded format
-train_y_one_hot = to_categorical(train_y)
-test_y_one_hot = to_categorical(test_y)
-
-# Create validation set
-X_train, X_val, y_train, y_val = train_test_split(train_X,
-                                                  train_y_one_hot,
-                                                  test_size=0.05,
-                                                  random_state=1)
-
-# Describe data dimensions
-print('Training images dimensions:', X_train.shape)
-print('Training labels size:', y_train.shape[0])
-print('Validation images dimensions:', X_val.shape)
-print('Validation labels size:', y_val.shape[0])
-print('Test images dimensions:', test_X.shape)
-print('Test labels size:', test_y.shape[0])
-
-
-
-
 ################### Model ######################
 
 # Load model
@@ -259,20 +193,6 @@ val_loss = joblib.load('./model/val_loss_lenet_5.h5')
 
 # Get number of epochs
 epochs = range(len(acc))
-
-
-
-
-################### Styles ######################
-
-# Tab styles
-tab_style = {}
-tab_selected_style = {
-    'borderTop': '1px solid #d6d6d6',
-    'borderBottom': '1px solid #d6d6d6',
-    'backgroundColor': 'white',
-    'color': 'black'
-}
 
 
 
