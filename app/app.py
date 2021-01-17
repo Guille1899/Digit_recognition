@@ -387,4 +387,4 @@ def update_data(string):
 # Run the server
 if __name__ == "__main__":
     app.run_server(debug=True, port=8080)  # Comment this line when launching from the AWS server
-    # app.run_server(debug=False, host='0.0.0.0', port=3838) # Uncomment this line when launching from the AWS server
+    # app.run_server(debug=False, host='0.0.0.0', port=8080) # Uncomment this line when launching from the AWS server

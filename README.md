@@ -2,7 +2,9 @@
 
 ## About this app
 
-This app allows you to recognise digits (i.e., numbers from 0 to 9) manually drawn on your screen.
+This [app](http://ec2-35-180-178-50.eu-west-3.compute.amazonaws.com:8080/) allows you to recognise digits (i.e., numbers from 0 to 9) manually drawn on your screen.
+
+![screenshot](img/screenshot.png)
 
 ## LeNet-5
 
@@ -94,3 +96,4 @@ jupyter notebook
 
 * [Dash](https://dash.plot.ly/)
 * [TensorFlow](https://www.tensorflow.org/)
+* [MNIST](http://yann.lecun.com/exdb/mnist/)
