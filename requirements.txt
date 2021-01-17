@@ -8,4 +8,5 @@ dash==1.18.1
 colorlover==0.3.0
 dash-auth==1.4.1
 dash-canvas==0.1.0
+scikit-image==0.18.1
 

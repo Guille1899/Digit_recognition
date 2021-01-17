@@ -6,6 +6,8 @@ This [app](http://ec2-35-180-178-50.eu-west-3.compute.amazonaws.com:8080/) allow
 
 ![screenshot](img/screenshot.png)
 
+[Link to app](http://ec2-35-180-178-50.eu-west-3.compute.amazonaws.com:8080/)
+
 ## LeNet-5
 
 Convolutional Neural Networks is the standard architecture for solving tasks associated with images (e.g., image classification). Some of the well-known deep learning architectures for CNN are LeNet-5 (7 layers), GoogLeNet (22 layers), AlexNet (8 layers), VGG (16–19 layers), and ResNet (152 layers).
