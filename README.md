@@ -2,11 +2,11 @@
 
 ## About this app
 
-This [app](http://ec2-35-180-178-50.eu-west-3.compute.amazonaws.com:8080/) allows you to recognise digits (i.e., numbers from 0 to 9) manually drawn on your screen.
+This [app](http://ec2-35-180-131-164.eu-west-3.compute.amazonaws.com:8080/) allows you to recognise digits (i.e., numbers from 0 to 9) manually drawn on your screen.
 
 ![screenshot](img/screenshot.png)
 
-[Link to app](http://ec2-35-180-178-50.eu-west-3.compute.amazonaws.com:8080/)
+[Link to app](http://ec2-35-180-131-164.eu-west-3.compute.amazonaws.com:8080/)
 
 ## LeNet-5
 

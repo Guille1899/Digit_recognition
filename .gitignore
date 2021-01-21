@@ -1,7 +1,7 @@
 .ipynb_checkpoints
 .idea
 .DS_Store
-AWS_instance.pem
+Guille_personal.pem
 connect_AWS
 debug
 debug.*
