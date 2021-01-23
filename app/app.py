@@ -32,7 +32,7 @@ from dash_canvas.utils import array_to_data_url, parse_jsonstring
 from dash.exceptions import PreventUpdate
 
 # Force to use CPU for this app
-tf.config.set_visible_devices([], 'GPU')
+# tf.config.set_visible_devices([], 'GPU')
 
 # Indicate the version of Tensorflow and whether it uses the CPU or the GPU
 print("TensorFlow version:", tf.__version__)
@@ -159,7 +159,7 @@ def description_card():
                 children="Convolutional Neural Networks is the standard architecture of a neural network designed for "
                          "solving tasks associated with images (e.g., image classification). Some of the well-known "
                          "deep learning architectures for CNN are LeNet-5 (7 layers), GoogLeNet (22 layers), AlexNet "
-                         "(8 layers), VGG (16–19 layers), and ResNet (152 layers). For this project, we use LeNet-5, "
+                         "(8 layers), VGG (16–19 layers), and ResNet (152 layers). For this app, I used LeNet-5, "
                          "which has been successfully used on the MNIST dataset to identify handwritten-digit "
                          "patterns."
             ),
@@ -230,14 +230,17 @@ app.layout = html.Div(
                     html.Div(
                         children=[
                             html.H5("Draw digit"),
+                            html.Div(
+                                children="Please, do not touch the limits of the black canvas!"
+                            ),
                             html.Br(),
                             DashCanvas(
                                 id='digit_drawn',
                                 filename="./assets/image_0.png",
-                                width=560,
-                                height=560,
+                                width=420,
+                                height=420,
                                 scale=1,
-                                lineWidth=60,
+                                lineWidth=50,
                                 lineColor='white',
                                 tool="pencil",
                                 zoom=1,
@@ -248,18 +251,18 @@ app.layout = html.Div(
                     ),
                     html.Br(),
                 ],
-                className="six columns"
+                className="three columns"
             ),
-            # Right column
+            # Center column
             html.Div(
-                id="right-column",
+                id="center-column",
                 children=[
                     html.Div(
                         children=[
                             html.H5("Prediction"),
                             html.Div(
                                 children="The digit drawn in the left canvas is pre-processed to be size-normalized "
-                                         "and centered with 28x28 pixels. In this way, the image is as similar as "
+                                         "and centered with 28x28 pixels (see image on the right). In this way, the image is as similar as "
                                          "possible as the training instances obtained from the MNIST database."
                             ),
                             html.Br(),
@@ -268,14 +271,27 @@ app.layout = html.Div(
                                          "but rather show a dummy example of how to integrate a CNN with a webapp."
                             ),
                             html.Br(),
-                            html.Div(id='predict-text', style={'font-weight': 'bold'}),
+                            html.Div(id='predict-text', style={'font-weight': 'bold', 'font-size': '60px'}),
+                            html.Br(),
+                        ],
+                    ),
+                    html.Br(),
+                ],
+                className="three columns"
+            ),
+            # Right column
+            html.Div(
+                id="right-column",
+                children=[
+                    html.Div(
+                        children=[
                             html.Br(),
                             html.Div(id='predict-canvas'),
                         ],
                     ),
                     html.Br(),
                 ],
-                className="six columns"
+                className="five columns"
             ),
         ]),
         html.Br(),
@@ -291,7 +307,7 @@ app.layout = html.Div(
               Input('digit_drawn', 'json_data'))
 def update_data(string):
     if string:
-        mask = parse_jsonstring(string, shape=(560, 560)).astype(int)
+        mask = parse_jsonstring(string).astype(int)
         mask = (mask * 255).astype(np.uint8)
         new_image = Image.fromarray(mask)
         new_image.save("./data/img_to_predict.png")
@@ -306,5 +322,5 @@ def update_data(string):
 
 # Run the server
 if __name__ == "__main__":
-    app.run_server(debug=True, port=8080)  # Comment this line when launching from the AWS server
-    # app.run_server(debug=False, host='0.0.0.0', port=8080) # Uncomment this line when launching from the AWS server
+    #app.run_server(debug=True, port=8080)  # Comment this line when launching from the AWS server
+    app.run_server(debug=False, host='0.0.0.0', port=8080) # Uncomment this line when launching from the AWS server
