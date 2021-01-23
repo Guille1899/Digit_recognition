@@ -71,7 +71,7 @@ It's time to install *tensorflow*:
 pip install <whl_url>
 ```
 
-* If you don't have a NVIDIA graphics card, you should install the regular "*tensoflow*" with the following command:
+* If you don't have a NVIDIA graphics card, you should install the regular *tensoflow* with the following command:
 ```
 pip install tensorflow==2.4.0
 ```
