@@ -4,7 +4,7 @@
 
 This [app](http://ec2-35-180-131-164.eu-west-3.compute.amazonaws.com:8080/) allows you to recognise digits (i.e., numbers from 0 to 9) manually drawn on your screen.
 
-![screenshot](img/screenshot.png)
+![](img/video_app.gif)
 
 [Link to app](http://ec2-35-180-131-164.eu-west-3.compute.amazonaws.com:8080/)
 
@@ -82,8 +82,6 @@ To run the app locally, use these commands:
 conda activate digit_recognition
 python ./app/app.py
 ```
-
-![](img/video_app.gif)
 
 ### Run the notebook
 Also, you can run the jupyter notebook locally:
