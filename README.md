@@ -18,7 +18,7 @@ For this project, we use LeNet-5, which has been successfully used on the MNIST 
 
 ## Data
 
-The dataset used to train, validate and test the model, correspond to the [MNIST](http://yann.lecun.com/exdb/mnist/) dataset.
+The dataset used in this model, corresponds to the [MNIST](http://yann.lecun.com/exdb/mnist/) dataset.
 It is composed by a training set of 60,000 examples, and a test set of 10,000 examples.
 The digits have been pre-processed to be size-normalized and centred in a fixed-size image of 28x28 pixels.
 
