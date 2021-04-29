@@ -34,7 +34,7 @@ The digits have been pre-processed to be size-normalized and centred in a fixed-
 
 Clone this repository and navigate to the main folder. To do so, open your Terminal (for MacOS/Linux) or your Command Prompt (for Windows) and run the following commands:
 ```
-git clone https://github.com/Guille1899/Digit_recognition.git
+git clone https://github.com/guillermo-lahuerta/Digit_recognition.git
 cd ./Digit_recognition/
 ```
 
