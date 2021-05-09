@@ -40,6 +40,7 @@ cd ./Digit_recognition/
 
 I strongly suggest to create a virtual environment with Conda to manage dependencies and isolate projects. After installing [Miniconda](https://docs.conda.io/en/latest/miniconda.html), run the following commands to update the base conda packages:
 ```
+conda activate
 conda update conda
 conda update python
 conda update --all
@@ -67,7 +68,7 @@ pip install -r requirements.txt
 ### Install TensorFlow
 It's time to install *TensorFlow*:
 
-* If you have a NVIDIA graphics card with CUDA architectures, you should consider installing *tensorflow-gpu* (instead of the regular *tensorflow*), to speed up your deep learning models. Rather than using *pip* or *conda* to try to figure out which version of TensorFlow you need, I recommend finding the exact "*.whl*" file from [TensorFlow](https://www.tensorflow.org/install/pip#package-location)’s site. Once you have the *url* of the corresponding TensorFlow version that you need, run the following command (substitute *<whl_url>* with the exact url):
+* If you have a NVIDIA graphics card with CUDA architectures, you should consider installing *tensorflow-gpu* (instead of the regular *tensorflow*), to speed up your deep learning models. Rather than using *pip* or *conda* to try to figure out which version of TensorFlow you need, I recommend finding the exact "*.whl*" file from [TensorFlow](https://www.tensorflow.org/install/pip#package-location)’s site. Once you have the *url* of the corresponding TensorFlow version that you need (i.e., "*Python 3.8 GPU support*" for either Linux or Windows), run the following command (substitute *<whl_url>* with the exact url):
 ```
 pip install <whl_url>
 ```
@@ -81,7 +82,7 @@ pip install tensorflow==2.4.0
 To run the app locally, use these commands:
 ```
 conda activate digit_recognition
-python ./app/app.py
+python app/app.py
 ```
 
 ### Run the notebook

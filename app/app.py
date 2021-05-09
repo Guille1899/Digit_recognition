@@ -144,11 +144,6 @@ def description_card():
                          "with the beauty and simpleness of more comprehensive tools (i.e., Python-Dash)."
             ),
             html.Div([
-                html.A("My LinkedIn profile",
-                       href='https://www.linkedin.com/in/guillermo-lahuerta-pi%C3%B1eiro-b9a58913a/',
-                       target="_blank")
-            ]),
-            html.Div([
                 html.A("GitHub repo",
                        href='https://github.com/Guille1899/Digit_recognition',
                        target="_blank")
