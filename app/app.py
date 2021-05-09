@@ -145,7 +145,7 @@ def description_card():
             ),
             html.Div([
                 html.A("GitHub repo",
-                       href='https://github.com/Guille1899/Digit_recognition',
+                       href='https://github.com/guillermo-lahuerta/Digit_recognition',
                        target="_blank")
             ]),
             html.Br(),
@@ -202,10 +202,6 @@ app.layout = html.Div(
         html.Div(
             id="banner",
             children=[
-                # html.Img(
-                #     src=app.get_asset_url("plotly_logo.png"),
-                #     style={'height': '10%', 'width': '10%'}
-                # )
             ],
         ),
         # Header
@@ -317,5 +313,5 @@ def update_data(string):
 
 # Run the server
 if __name__ == "__main__":
-    #app.run_server(debug=True, port=8080)  # Comment this line when launching from the AWS server
-    app.run_server(debug=False, host='0.0.0.0', port=8080) # Uncomment this line when launching from the AWS server
+    app.run_server(debug=True, port=8080)  # Comment this line when launching from the AWS server
+    #app.run_server(debug=False, host='0.0.0.0', port=8080) # Uncomment this line when launching from the AWS server
