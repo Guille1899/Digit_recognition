@@ -4,6 +4,8 @@
 
 This [Webapp](http://ec2-35-180-131-164.eu-west-3.compute.amazonaws.com:8080/) allows you to recognise digits (i.e., numbers from 0 to 9) manually drawn on your screen.
 
+![app_in_use](img/digit_predict.gif)
+
 
 ## LeNet-5
 
