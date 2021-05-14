@@ -3,12 +3,7 @@
 # General imports
 import numpy as np ; np.random.seed(1) # for reproducibility
 import pandas as pd
-from skimage import io
-import json
-import os
 import plotly.express as px
-import random
-import shutil
 import pathlib
 import joblib
 pd.options.mode.chained_assignment = None
@@ -18,21 +13,17 @@ import tensorflow as tf
 from tensorflow import keras
 
 # PIL
-import PIL
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageFilter
 
 # Dash imports
 import dash
 import dash_core_components as dcc
+import dash_bootstrap_components as dbc
 import dash_html_components as html
-from dash.dependencies import Input, Output, State  # ClientsideFunction
-import colorlover
+from dash.dependencies import Input, Output
 from dash_canvas import DashCanvas
-from dash_canvas.utils import array_to_data_url, parse_jsonstring
+from dash_canvas.utils import parse_jsonstring
 from dash.exceptions import PreventUpdate
-
-# Force to use CPU for this app
-# tf.config.set_visible_devices([], 'GPU')
 
 # Indicate the version of Tensorflow and whether it uses the CPU or the GPU
 print("TensorFlow version:", tf.__version__)
@@ -112,7 +103,7 @@ def generate_prediction():
 
     # Plot image
     fig = px.imshow(tf.reshape(img, [28, 28]), binary_string=True)
-    text = 'This is a ' + str(prediction[0]) + ' [' + certainty + ']'
+    text = 'This is a ' + str(prediction[0]) # + ' [' + certainty + ']'
 
     # Plot grid
     return html.Div([
@@ -132,44 +123,64 @@ def description_card():
             html.H1(
                 "Handwritten digit classifier with LeNet-5",
                 style={
-                    'text-align': 'center',
-                    'font-family': 'monaco, sans-serif'
+                    'text-align': 'center', 'font-weight': 'bold',
+                    'font-family': 'monaco, sans-serif', 'color': 'royalblue'
                 }
             ),
-            html.H5("About this App"),
             html.Div(
-                children="This app allows you to recognize digits (i.e., numbers from 0 to 9) "
-                         "manually drawn on your screen. I created this simple app as an example of how to combine "
-                         "the complexity of Machine Learning algorithms (such as Convolutional Neural Networks) "
-                         "with the beauty and simpleness of more comprehensive tools (i.e., Python-Dash)."
+                # Column
+                html.Div(
+                    id="central-column",
+                    children=[
+                        html.H5("About this App"),
+                        html.Div(
+                            children="This app allows you to recognize digits (i.e., numbers from 0 to 9) "
+                                     "manually drawn on your screen. I created this simple app as an example of how to combine "
+                                     "the complexity of Machine Learning algorithms (such as Convolutional Neural Networks) "
+                                     "with the beauty and simpleness of more comprehensive tools (i.e., Python-Dash)."
+                        ),
+                        html.Div([
+                            html.A("GitHub repo",
+                                   href='https://github.com/guillermo-lahuerta/Digit_recognition',
+                                   target="_blank")
+                        ]),
+                        html.Br(),
+                        html.H5("LeNet-5"),
+                        html.Div(
+                            children="Convolutional Neural Networks is the standard architecture of a neural network designed for "
+                                     "solving tasks associated with images (e.g., image classification). Some of the well-known "
+                                     "deep learning architectures for CNN are LeNet-5 (7 layers), GoogLeNet (22 layers), AlexNet "
+                                     "(8 layers), VGG (16–19 layers), and ResNet (152 layers). For this app, I used LeNet-5, "
+                                     "which has been successfully used on the MNIST dataset to identify handwritten-digit "
+                                     "patterns."
+                        ),
+                        html.Br(),
+                        html.H5("Data"),
+                        html.Div(
+                            children="The dataset used to train, validate and test the model, correpsond to the MNIST dataset. "
+                                     "It is composed by a training set of 60,000 examples, and a test set of 10,000 examples. "
+                                     "The digits have been pre-processed to be size-normalized and centered in a fixed-size "
+                                     "image of 28x28 pixels."
+                        ),
+                        html.Div([
+                            html.A("MNIST database", href='http://yann.lecun.com/exdb/mnist/', target="_blank")
+                        ]),
+                    ]
+                ), style={'display': 'inline-block', 'width': '100%', 'justify': "center", 'vertical-align': 'top'}
             ),
-            html.Div([
-                html.A("GitHub repo",
-                       href='https://github.com/guillermo-lahuerta/Digit_recognition',
-                       target="_blank")
-            ]),
-            html.Br(),
-            html.H5("LeNet-5"),
             html.Div(
-                children="Convolutional Neural Networks is the standard architecture of a neural network designed for "
-                         "solving tasks associated with images (e.g., image classification). Some of the well-known "
-                         "deep learning architectures for CNN are LeNet-5 (7 layers), GoogLeNet (22 layers), AlexNet "
-                         "(8 layers), VGG (16–19 layers), and ResNet (152 layers). For this app, I used LeNet-5, "
-                         "which has been successfully used on the MNIST dataset to identify handwritten-digit "
-                         "patterns."
+                id="Mnist",
+                children=[
+                    html.Br(),
+                    html.Img(
+                        src=app.get_asset_url("mnist.png"),
+                        style={'width': '100%', 'height': '40%', 'width': '40%', 'justify': "center",
+                               'vertical-align': 'middle', 'textAlign': 'center'}
+                    ),
+                    html.Br()
+                ]
             ),
-            html.Br(),
-            html.H5("Data"),
-            html.Div(
-                children="The dataset used to train, validate and test the model, correpsond to the MNIST dataset. "
-                         "It is composed by a training set of 60,000 examples, and a test set of 10,000 examples. "
-                         "The digits have been pre-processed to be size-normalized and centered in a fixed-size "
-                         "image of 28x28 pixels."
-            ),
-            html.Div([
-                html.A("MNIST database", href='http://yann.lecun.com/exdb/mnist/', target="_blank")
-            ])
-        ],
+        ], style={'width': '100%', 'vertical-align': 'middle', 'textAlign': 'left', 'justify': 'center'}
     )
 
 
@@ -191,19 +202,20 @@ epochs = range(len(acc))
 
 
 
-
 ################### User Interface ######################
 
 # Layout
 app.layout = html.Div(
     id="app-container",
     children=[
+
         # Banner
         html.Div(
             id="banner",
             children=[
             ],
         ),
+
         # Header
         html.Div(
             id="header",
@@ -212,6 +224,7 @@ app.layout = html.Div(
                 html.Hr(),
             ],
         ),
+
         # Main body
         html.Div([
             # Left column
@@ -220,7 +233,7 @@ app.layout = html.Div(
                 children=[
                     html.Div(
                         children=[
-                            html.H5("Draw digit"),
+                            html.H5("Draw a digit"),
                             html.Div(
                                 children="Please, do not touch the limits of the black canvas!"
                             ),
@@ -228,22 +241,23 @@ app.layout = html.Div(
                             DashCanvas(
                                 id='digit_drawn',
                                 filename="./assets/image_0.png",
-                                width=420,
-                                height=420,
+                                width=380,
+                                height=380,
                                 scale=1,
                                 lineWidth=50,
                                 lineColor='white',
                                 tool="pencil",
                                 zoom=1,
                                 goButtonTitle='Predict',
-                                hide_buttons=["zoom", "pan", "line", "pencil", "rectangle", "select"]
+                                hide_buttons=["zoom", "pan", "line", "pencil", "rectangle", "select", "next"]
                             )
                         ],
                     ),
                     html.Br(),
                 ],
-                className="three columns"
+                className="four columns"
             ),
+
             # Center column
             html.Div(
                 id="center-column",
@@ -251,6 +265,7 @@ app.layout = html.Div(
                     html.Div(
                         children=[
                             html.H5("Prediction"),
+                            html.Br(),
                             html.Div(
                                 children="The digit drawn in the left canvas is pre-processed to be size-normalized "
                                          "and centered with 28x28 pixels (see image on the right). In this way, the image is as similar as "
@@ -262,14 +277,16 @@ app.layout = html.Div(
                                          "but rather show a dummy example of how to integrate a CNN with a webapp."
                             ),
                             html.Br(),
-                            html.Div(id='predict-text', style={'font-weight': 'bold', 'font-size': '60px'}),
+                            html.Div(id='predict-text', style={'font-weight': 'bold', 'font-size': '50px',
+                                                               'color': 'royalblue'}),
                             html.Br(),
                         ],
                     ),
                     html.Br(),
                 ],
-                className="three columns"
+                className="three columns", style={}
             ),
+
             # Right column
             html.Div(
                 id="right-column",
@@ -284,10 +301,11 @@ app.layout = html.Div(
                 ],
                 className="five columns"
             ),
-        ]),
+        ], style={'textAlign': 'center'}),
         html.Br(),
         html.Br(),
-    ],
+        html.Br(),
+    ], style={'justify': 'center'}
 )
 
 
