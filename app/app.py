@@ -172,11 +172,14 @@ def description_card():
                 id="Mnist",
                 children=[
                     html.Br(),
-                    html.Img(
-                        src=app.get_asset_url("mnist.png"),
-                        style={'width': '100%', 'height': '40%', 'width': '40%', 'justify': "center",
-                               'vertical-align': 'middle', 'textAlign': 'center'}
+                    html.Center(
+                        html.Img(
+                            src=app.get_asset_url("mnist.png"),
+                            style={'width': '100%', 'height': '40%', 'width': '40%', 'justify': "center",
+                                   'vertical-align': 'middle', 'textAlign': 'center'}
+                        ),
                     ),
+                    html.Br(),
                     html.Br()
                 ]
             ),
@@ -238,18 +241,20 @@ app.layout = html.Div(
                                 children="Please, do not touch the limits of the black canvas!"
                             ),
                             html.Br(),
-                            DashCanvas(
-                                id='digit_drawn',
-                                filename="./assets/image_0.png",
-                                width=380,
-                                height=380,
-                                scale=1,
-                                lineWidth=50,
-                                lineColor='white',
-                                tool="pencil",
-                                zoom=1,
-                                goButtonTitle='Predict',
-                                hide_buttons=["zoom", "pan", "line", "pencil", "rectangle", "select", "next"]
+                            html.Center(
+                                DashCanvas(
+                                    id='digit_drawn',
+                                    filename="./assets/image_0.png",
+                                    width=380,
+                                    height=380,
+                                    scale=1,
+                                    lineWidth=35,
+                                    lineColor='white',
+                                    tool="pencil",
+                                    zoom=1,
+                                    goButtonTitle='Predict',
+                                    hide_buttons=["zoom", "pan", "line", "pencil", "rectangle", "select", "next"]
+                                )
                             )
                         ],
                     ),
