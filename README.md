@@ -13,7 +13,7 @@ Convolutional Neural Networks is the standard architecture for solving tasks ass
 
 For this project, we use LeNet-5, which has been successfully used on the MNIST dataset to identify handwritten-digit patterns. The LeNet-5 architecture is presented in the following schema.
 
-![screenshot](img/lenet.png)
+![lenet](img/lenet.png)
 
 ## Data
 
@@ -21,7 +21,7 @@ The dataset used in this model, corresponds to the [MNIST](http://yann.lecun.com
 It is composed by a training set of 60,000 examples, and a test set of 10,000 examples.
 The digits have been pre-processed to be size-normalized and centred in a fixed-size image of 28x28 pixels.
 
-![screenshot](img/mnist.png)
+![data](img/mnist.png)
 
 ## Requirements
 
