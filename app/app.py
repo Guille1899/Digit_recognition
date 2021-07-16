@@ -141,7 +141,7 @@ def description_card():
                         ),
                         html.Div([
                             html.A("GitHub repo",
-                                   href='https://github.com/guillermo-lahuerta/Digit_recognition',
+                                   href='https://github.com/guillermo-lahuerta/Digit-recognition',
                                    target="_blank")
                         ]),
                         html.Br(),

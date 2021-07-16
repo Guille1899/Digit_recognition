@@ -33,8 +33,8 @@ The digits have been pre-processed to be size-normalized and centred in a fixed-
 
 Clone this repository and navigate to the main folder. To do so, open your Terminal (for MacOS/Linux) or your Command Prompt (for Windows) and run the following commands:
 ```
-git clone https://github.com/guillermo-lahuerta/Digit_recognition.git
-cd ./Digit_recognition/
+git clone https://github.com/guillermo-lahuerta/Digit-recognition.git
+cd Digit-recognition/
 ```
 
 I strongly suggest to create a virtual environment with Conda to manage dependencies and isolate projects. After installing [Miniconda](https://docs.conda.io/en/latest/miniconda.html), run the following commands to update the base conda packages:
