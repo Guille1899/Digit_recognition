@@ -2,7 +2,7 @@
 
 ## About this app
 
-This [Webapp](http://ec2-52-47-116-65.eu-west-3.compute.amazonaws.com:8080/) allows you to recognise digits (i.e., numbers from 0 to 9) manually drawn on your screen.
+This [web app](http://ec2-52-47-116-65.eu-west-3.compute.amazonaws.com:8080/) allows you to recognise digits (i.e., numbers from 0 to 9) manually drawn on your screen.
 
 ![app_in_use](img/digit_predict.gif)
 
@@ -65,16 +65,17 @@ pip install -r requirements.txt
 ```
 
 ### Install TensorFlow
-It's time to install *TensorFlow*:
 
-* If you have a NVIDIA graphics card with CUDA architectures, you should consider installing *tensorflow-gpu* (instead of the regular *tensorflow*), to speed up your deep learning models. Rather than using *pip* or *conda* to try to figure out which version of TensorFlow you need, I recommend finding the exact "*.whl*" file from [TensorFlow](https://www.tensorflow.org/install/pip#package-location)’s site. Once you have the *url* of the corresponding TensorFlow version that you need (i.e., "*Python 3.8 GPU support*" for either Linux or Windows), run the following command (substitute *<whl_url>* with the exact url):
-```
-pip install <whl_url>
-```
+It's time to install *TensorFlow*:
 
 * If you don't have a NVIDIA graphics card, you should install the regular *TensorFlow* with the following command:
 ```
 pip install tensorflow==2.4.0
+```
+
+* If you have a NVIDIA graphics card with CUDA architectures, you should consider installing *tensorflow-gpu* (instead of the regular *tensorflow*), to speed up your deep learning models. Rather than using *pip* or *conda* to try to figure out which version of TensorFlow you need, I recommend finding the exact "*.whl*" file from [TensorFlow](https://www.tensorflow.org/install/pip#package-location)’s site. Once you have the *url* of the corresponding TensorFlow version that you need (i.e., "*Python 3.8 GPU support*" for either Linux or Windows), run the following command (substitute *<whl_url>* with the exact url):
+```
+pip install <whl_url>
 ```
 
 ### Run the app
