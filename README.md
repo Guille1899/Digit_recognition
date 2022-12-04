@@ -2,7 +2,7 @@
 
 ## About this app
 
-This [web app](http://ec2-35-181-53-166.eu-west-3.compute.amazonaws.com:8081/) allows you to recognise digits (i.e., numbers from 0 to 9) manually drawn on your screen.
+This dash application allows you to recognise digits (i.e., numbers from 0 to 9) manually drawn on your screen.
 
 ![app_in_use](img/digit_predict.gif)
 
